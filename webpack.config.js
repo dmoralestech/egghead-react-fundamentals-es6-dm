@@ -14,10 +14,12 @@ var lessons = [
   "11-higher-order",
   "12-composable",
   "13-dynamic",
-  "14-build-compiler"
+  "14-build-compiler",
+  "17-dmTest"
 ]
 
-var entry = {}
+var entry = {};
+
 lessons.forEach(function(lesson){
   entry[lesson] = './lessons/' + lesson + '/main.js'
 })
