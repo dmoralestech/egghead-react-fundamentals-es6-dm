@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 class App extends React.Component {
     render() {
         let txt = this.props.txt
@@ -15,11 +16,15 @@ class App extends React.Component {
 
 App.propTypes = {
     txt: React.PropTypes.string,
-    cat: React.PropTypes.number.isRequired
+    cat: React.PropTypes.number.isRequired,
+    name: React.PropTypes.string.isRequired
 }
 
 App.defaultProps = {
-    txt: 'this is the default txt'
+    txt: 'this is the default txt',
+    cat: 0,
+    name: "nothing"
+
 }
 
 ReactDOM.render(
