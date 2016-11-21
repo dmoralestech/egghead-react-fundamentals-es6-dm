@@ -1,5 +1,3 @@
-// https://jsbin.com/yirifo/edit?html,js,output
-
 import React from 'react';
 
 class App extends React.Component {
@@ -25,5 +23,7 @@ App.defaultProps = {
     name: "nothing"
 
 }
+
+export default App
 
 
