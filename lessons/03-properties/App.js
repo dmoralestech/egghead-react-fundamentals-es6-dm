@@ -3,22 +3,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 class App extends React.Component {
-  render(){
-    let txt = this.props.txt
-    return <h1>{txt}</h1>
-  }
+    render() {
+        let txt = this.props.txt
+        return <div>
+            <h1>{txt}</h1>
+            <h2>{this.props.cat}</h2>
+            <h2>{this.props.name}</h2>
+        </div>
+    }
 }
 
 App.propTypes = {
-  txt: React.PropTypes.string,
-  cat: React.PropTypes.number.isRequired
+    txt: React.PropTypes.string,
+    cat: React.PropTypes.number.isRequired
 }
 
-App.defaultProps ={
-  txt: 'this is the default txt'
+App.defaultProps = {
+    txt: 'this is the default txt'
 }
 
 ReactDOM.render(
-  <App cat={5} />,
-  document.getElementById('app')
+    <App cat={5} name="darwin"/>,
+    document.getElementById('app')
 );
