@@ -1,7 +1,6 @@
 // https://jsbin.com/yirifo/edit?html,js,output
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class App extends React.Component {
     render() {
@@ -27,7 +26,4 @@ App.defaultProps = {
 
 }
 
-ReactDOM.render(
-    <App cat={5} name="darwin"/>,
-    document.getElementById('app')
-);
+
