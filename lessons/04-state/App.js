@@ -22,6 +22,7 @@ class App extends React.Component {
                        onChange={this.update.bind(this)}/>
                 <h1>{this.state.txt}</h1>
                 <h2>{this.state.cat}</h2>
+                <h2>{this.props.appName}</h2>
             </div>
         );
     }
