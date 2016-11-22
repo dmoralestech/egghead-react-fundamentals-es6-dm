@@ -106,3 +106,22 @@ const App = Header.contramap(s => s.pageName)
 // )
 
 export default App;
+
+/*
+ const Box = x => ({
+ map: f => Box(f(x))
+ });
+
+ const c1 = str => Box(str.trim())
+ .map(trimmed => new Number(trimmed))
+ .map(number => number + 1)
+ .map(nextNumber => String.fromCharCode(nextNumber))
+
+ console.log(c1(' 64 '));
+
+ const c1 = str => [str.trim()]
+ .map(trimmed => new Number(trimmed))
+ .map(number => number + 1)
+ .map(nextNumber => String.fromCharCode(nextNumber))
+
+ */
