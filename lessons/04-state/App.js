@@ -11,8 +11,10 @@ class App extends React.Component {
     }
 
     update(e) {
-        this.setState({txt: e.target.value})
-        this.setState({cat: this.state.cat + 1})
+        this.setState({
+            txt: e.target.value,
+            cat: this.state.cat + 1
+        });
     }
 
     render() {
