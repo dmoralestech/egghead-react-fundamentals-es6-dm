@@ -10,6 +10,12 @@ class App extends React.Component {
         }
     }
 
+    componentDidMount(){
+        this.setState({
+            txt: this.props.txt
+        })
+    }
+
     update(e) {
         this.setState({
             txt: e.target.value,
@@ -28,6 +34,15 @@ class App extends React.Component {
             </div>
         );
     }
+}
+
+App.propTypes = {
+    txt: React.PropTypes.string,
+}
+
+App.defaultProps = {
+    txt: 'this is the default txt',
+
 }
 
 export default App
