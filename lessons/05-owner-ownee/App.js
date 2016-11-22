@@ -6,9 +6,11 @@ const Widget = (props) => {
         <div>
             <input type="text" onChange={props.update}/>
             <h1>{props.txt}</h1>
+            <h1>{props.name}</h1>
         </div>
     );
 }
+
 
 
 class App extends React.Component {
@@ -25,7 +27,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Widget txt={this.state.txt} update={this.update}/>
+                <Widget txt={this.state.txt} name='hello world' update={this.update}/>
                 <Widget txt={this.state.txt} update={this.update}/>
                 <Widget txt={this.state.txt} update={this.update}/>
                 <Widget txt={this.state.txt} update={this.update}/>
