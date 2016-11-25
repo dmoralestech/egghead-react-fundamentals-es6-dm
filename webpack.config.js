@@ -15,7 +15,8 @@ var lessons = [
   "12-composable",
   "13-dynamic",
   "14-build-compiler",
-  "17-dmTest"
+  "17-dmTest",
+    "18-leaderboard"
 ]
 
 var entry = {};
