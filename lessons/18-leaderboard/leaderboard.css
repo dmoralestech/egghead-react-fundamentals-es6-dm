@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Roboto+Mono:400,700";
+
 body {
     background: #EEEEEE;
 }
@@ -16,6 +17,7 @@ body {
     background: #FFFFFF;
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.2);
 }
+
 .Leaderboard .Title {
     padding: 20px;
     background: #121212;
@@ -24,24 +26,30 @@ body {
     text-transform: uppercase;
     text-align: center;
 }
+
 .Leaderboard ul {
     padding: 20px;
 }
+
 .Leaderboard .Person {
     align-items: center;
     background-size: cover;
     display: flex;
     margin-bottom: 10px;
 }
+
 .Leaderboard .Person:first-child {
     margin-bottom: 15px;
 }
+
 .Leaderboard .Person:first-child .Image {
     transform: scale(1.15);
 }
+
 .Leaderboard .Person:last-child {
     margin-bottom: 0;
 }
+
 .Leaderboard .Person .Image {
     height: 44px;
     width: 44px;
@@ -49,9 +57,11 @@ body {
     border-radius: 44px;
     transform: scale(0.9);
 }
+
 .Leaderboard .Person .Name {
     margin-left: 10px;
 }
+
 .Leaderboard .Person .Score {
     margin-left: auto;
     font-weight: 700;

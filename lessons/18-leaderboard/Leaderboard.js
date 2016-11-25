@@ -36,21 +36,21 @@ const data = {
 }
 
 let Leaderboard = React.createClass({
-    getInitialState: function() {
+    getInitialState: function () {
         return (data);
     },
-    render: function() {
+    render: function () {
         return (
             <div className="Leaderboard">
-                <Title title={this.state.title} />
-                <List people={this.state.people} />
+                <Title title={this.state.title}/>
+                <List people={this.state.people}/>
             </div>
         );
     }
 });
 
 let Title = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <div className="Title">{this.props.title}</div>
         );
@@ -58,22 +58,22 @@ let Title = React.createClass({
 });
 
 let List = React.createClass({
-    compareArray: function(a,b) {
+    compareArray: function (a, b) {
         if (a.score < b.score)
             return 1;
         if (a.score > b.score)
             return -1;
         return 0;
     },
-    sortArray: function() {
+    sortArray: function () {
         return this.props.people.sort(this.compareArray);
     },
-    render: function() {
+    render: function () {
 
         let peopleList = this.sortArray();
 
-        let people = peopleList.map(function(person, i) {
-            return <Person name={person.name} score={person.score} image={person.image} />
+        let people = peopleList.map(function (person, i) {
+            return <Person name={person.name} score={person.score} image={person.image}/>
         });
 
         return (
@@ -85,10 +85,10 @@ let List = React.createClass({
 });
 
 let Person = React.createClass({
-    render: function() {
+    render: function () {
         return (
             <li className="Person">
-                <div className="Image" style={{ backgroundImage: 'url(' + this.props.image + ')'}}></div>
+                <div className="Image" style={{backgroundImage: 'url(' + this.props.image + ')'}}></div>
                 <div className="Name">{this.props.name}</div>
                 <div className="Score">{this.props.score}</div>
             </li>
