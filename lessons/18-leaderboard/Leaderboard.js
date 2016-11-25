@@ -1,6 +1,8 @@
 /**
  * Created by darwinmorales on 26/11/2016.
  */
+import React from 'react';
+
 
 const data = {
     title: 'Leaderboarddm',
