@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 class App extends React.Component {
     constructor() {
         super();
@@ -25,7 +26,7 @@ class App extends React.Component {
 
     nameUpdate(e) {
         this.setState({
-            name: ReactDOM.findDOMNode(this.refs.name.refs.inp).value
+            name: ReactDOM.findDOMNode(this.refs.name.refs.textbox).value
         })
     }
 
@@ -41,7 +42,7 @@ class App extends React.Component {
                 <Slider ref="blue" update={this.update}/>
                 {this.state.blue}
                 <br />
-                <input ref="name" type="text" onChange={this.nameUpdate} value={this.state.name}/>
+                <TextBox ref="name" update={this.nameUpdate}/>
                 <br />
             </div>
         );
@@ -60,6 +61,18 @@ class Slider extends React.Component {
         );
     }
 }
+
+class TextBox extends React.Component {
+    render() {
+        return (
+            <div>
+                <input ref="texbox" type="text"
+                       onChange={this.props.update}/>
+            </div>
+        );
+    }
+}
+
 
 
 export default App
