@@ -9,5 +9,5 @@ import Leaderboard from './Leaderboard';
 // Render
 ReactDOM.render(
     <Leaderboard />,
-    document.getElementById('leaderboard')
+    document.getElementById('leaderboard2')
 );
