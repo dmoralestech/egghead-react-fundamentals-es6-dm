@@ -4,10 +4,11 @@ import React from 'react';
 class App extends React.Component {
     render() {
         return (
-        <div>
-            <Button>I <Heart/> React</Button>
-            <Button>I <Dollar/> React</Button>
-        </div>)
+            <div>
+                <Button>I <Heart/> React</Button>
+                <Button>I <Star/> React</Button>
+            </div>
+        )
     }
 }
 
@@ -18,6 +19,6 @@ class Button extends React.Component {
 }
 
 const Heart = () => <span className="glyphicon glyphicon-heart"></span>
-const Dollar = () => <span className="glyphicon glyphicon-dollar"></span>
+const Star = () => <span className="glyphicon glyphicon-star"></span>
 
 export default App
