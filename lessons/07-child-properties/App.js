@@ -21,4 +21,12 @@ class Button extends React.Component {
 const Heart = () => <span className="glyphicon glyphicon-heart"></span>
 const Star = () => <span className="glyphicon glyphicon-star"></span>
 
+// const a = p => {
+//     const b = () => {alert("b");};
+//     const c = () => {alert("c");};
+//     const d = () => {alert(p + " d");};
+//     return {b, c, d};
+// }
+// a('p').d();
+
 export default App
