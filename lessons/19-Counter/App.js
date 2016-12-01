@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 const Counter = ({
     value,
     onIncrement,
-    onDecrement}) => (
+    onDecrement
+}) => (
     <div>
         <h1>{value}</h1>
         <button onClick={onIncrement}>+</button>
@@ -37,18 +38,8 @@ class App extends React.Component {
         return (
             <div>
                 <Counter
-                    value={store.getState()}
-                    onIncrement={() =>
-                                store.dispatch({
-                                    type: 'INCREMENT'
-                                })
-                            }
-                    onDecrement={() =>
-                                store.dispatch({
-                                    type: 'DECREMENT'
-                                })
-                            }
-                />,
+                    value="Test"
+                />
             </div>
         );
     }
