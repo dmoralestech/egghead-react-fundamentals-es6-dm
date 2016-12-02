@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="//fb.me/react-0.13.1.js"></script>
+
     <meta charset="utf-8">
     <title>React Hello World w/ JSBin</title>
 </head>
 <body>
-<div id="react_example"></div>
-<script src="index.js"></script>
+<div id="root"></div>
+
+<script src="//fb.me/react-0.13.1.js"></script>
+<script src="//fb.me/react-0.13.1.js"></script>
+<script>
+
+    var MyGroceryList = React.createClass({
+        render: function () {
+            return (
+                    <ul>
+                        <MyGroceryListItem quantity="1">Bread</MyGroceryListItem>
+                        <MyGroceryListItem quantity="6">Eggs</MyGroceryListItem>
+                        <MyGroceryListItem quantity="2">Milk</MyGroceryListItem>
+                    </ul>
+            );
+        }
+    });
+
+    var MyGroceryListItem = React.createClass({
+        render: function () {
+            return (
+                    <li>
+                        {this.props.quantity}× {this.props.children}
+                    </li>
+            );
+        }
+    });
+
+    ReactDOM.render(React.createElement(MyGroceryList, {}), document.getElementById("root"));
+
+
+</script>
 
 </body>
 </html>
