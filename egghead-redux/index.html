@@ -1,43 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
 
-    <meta charset="utf-8">
-    <title>React Hello World w/ JSBin</title>
+    <script src="https://fb.me/react-0.14.7.min.js"></script>
+    <script src="https://fb.me/react-dom-0.14.7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.3.1/redux.js"></script>
+    <script src="https://npmcdn.com/expect/umd/expect.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
-<div id="root"></div>
-
-<script src="//fb.me/react-0.13.1.js"></script>
-<script src="//fb.me/react-0.13.1.js"></script>
-<script>
-
-    var MyGroceryList = React.createClass({
-        render: function () {
-            return (
-                    <ul>
-                        <MyGroceryListItem quantity="1">Bread</MyGroceryListItem>
-                        <MyGroceryListItem quantity="6">Eggs</MyGroceryListItem>
-                        <MyGroceryListItem quantity="2">Milk</MyGroceryListItem>
-                    </ul>
-            );
-        }
-    });
-
-    var MyGroceryListItem = React.createClass({
-        render: function () {
-            return (
-                    <li>
-                        {this.props.quantity}× {this.props.children}
-                    </li>
-            );
-        }
-    });
-
-    ReactDOM.render(React.createElement(MyGroceryList, {}), document.getElementById("root"));
-
-
-</script>
-
+<div id='root'></div>
 </body>
 </html>
