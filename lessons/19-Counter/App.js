@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStore } from 'redux';
+import {createStore} from 'redux';
 
 const counter = (state = 0, action) => {
     switch (action.type) {
@@ -15,7 +15,7 @@ const counter = (state = 0, action) => {
 const store = createStore(counter);
 
 //
-const Counter1 = ({value, onIncrement, onDecrement}) =>
+const CounterComponent = ({value, onIncrement, onDecrement}) =>
     (<div>
         <h1>{value}</h1>
         <button onClick={onIncrement}>+</button>
@@ -46,18 +46,23 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <Counter1
+                <CounterComponent
                     value={store.getState()}
-                    onIncrement={() =>
-                                store.dispatch({
-                                    type: 'INCREMENT'
-                                })
-                            }
-                    onDecrement={() =>
-                                store.dispatch({
-                                    type: 'DECREMENT'
-                                })
-                            }
+                    onIncrement={() => {
+                        console.log("increment")
+                        store.dispatch({
+                            type: 'INCREMENT'
+                        });
+                    }
+                    }
+
+                    onDecrement={() => {
+                        console.log("decrement");
+                        store.dispatch({
+                            type: 'DECREMENT'
+                        });
+                    }
+                    }
                 />
             </div>
         );
