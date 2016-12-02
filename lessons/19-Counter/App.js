@@ -2,6 +2,8 @@ import React from 'react';
 import {createStore} from 'redux';
 
 const counter = (state = 0, action) => {
+    console.log("enter counter");
+    console.log(action, state);
     switch (action.type) {
         case 'INCREMENT':
             return state + 1;
@@ -23,6 +25,7 @@ const CounterComponent = ({value, onIncrement, onDecrement}) =>
 
 class App extends React.Component {
     render() {
+        console.log(store.getState());
         return (
             <div>
                 <CounterComponent
