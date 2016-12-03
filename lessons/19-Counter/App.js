@@ -17,12 +17,16 @@ const counter = (state = 0, action) => {
 const createStore = (reducer) => {
     let state;
     let listeners = [];
+    console.log("enter create store");
 
     const getState = () => state;
 
     const dispatch = (action) => {
         state = reducer(state, action);
-        listeners.forEach(listener => listener());
+        console.log("state: " + getState());
+        listeners.forEach(listener => {
+            console.log("calling: " + listener);
+            listener();});
     };
 
     const subscribe = (listener) => {
