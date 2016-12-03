@@ -1,9 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 // import {createStore} from 'redux';
 
 const counter = (state = 0, action) => {
-    console.log("enter counter");
-    console.log(action, state);
     switch (action.type) {
         case 'INCREMENT':
             return state + 1;
@@ -14,7 +13,7 @@ const counter = (state = 0, action) => {
     }
 }
 
-const createStore = (reducer) => {
+const createStore1 = (reducer) => {
     let state;
     let listeners = [];
     console.log("enter create store");
@@ -25,11 +24,12 @@ const createStore = (reducer) => {
         state = reducer(state, action);
         console.log("state: " + getState());
         listeners.forEach(listener => {
-            console.log("calling: " + listener);
+            //console.log("calling: " + listener);
             listener();});
     };
 
     const subscribe = (listener) => {
+        console.log("subscribe: " + listener);
         listeners.push(listener);
         return () => {
             listeners = listeners.filter(l => l !== listener);
@@ -41,42 +41,32 @@ const createStore = (reducer) => {
     return { getState, dispatch, subscribe };
 
 };
+const store = createStore1(counter)
 
-const store = createStore(counter);
-
-const CounterComponent = ({value, onIncrement, onDecrement}) =>
-    (<div>
+const Counter = ({
+    value,
+    onIncrement,
+    onDecrement
+}) => (
+    <div>
         <h1>{value}</h1>
         <button onClick={onIncrement}>+</button>
         <button onClick={onDecrement}>-</button>
-    </div>);
+    </div>
+);
 
-class App extends React.Component {
-    render() {
-        console.log(store.getState());
-        return (
-            <div>
-                <CounterComponent
-                    value={store.getState()}
-                    onIncrement={() => {
-                        console.log("increment")
-                        store.dispatch({
-                            type: 'INCREMENT'
-                        });
-                    }
-                    }
-
-                    onDecrement={() => {
-                        console.log("decrement");
-                        store.dispatch({
-                            type: 'DECREMENT'
-                        });
-                    }
-                    }
-                />
-            </div>
-        );
-    }
+const render = () => {
+    ReactDOM.render(
+        <Counter
+            value={store.getState()}
+            onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
+            onDecrement={() => store.dispatch({ type: 'DECREMENT' })}
+        />,
+        document.getElementById('app')
+    )
 }
+
+render()
+store.subscribe(render)
 
 export default App
