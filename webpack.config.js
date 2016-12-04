@@ -17,7 +17,8 @@ var lessons = [
     "14-build-compiler",
     "17-dmTest",
     "18-leaderboard",
-    "19-Counter"
+    "19-Counter",
+    "20-Todos"
 ]
 
 var entry = {};
