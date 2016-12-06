@@ -111,6 +111,20 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
     }
 };
 
+const todoApp = (state = {}, action) => {
+    return {
+        // Call the `todos()` reducer from last section
+        todos: todos(
+            state.todos,
+            action
+        ),
+        visibilityFilter: visibilityFilter(
+            state.visibilityFilter,
+            action
+        )
+    };
+};
+
 
 testAddTodo();
 console.log('All tests passed')
