@@ -4,7 +4,7 @@ import {createStore} from 'redux';
 import deepFreeze from 'deep-freeze';
 import expect from 'expect';
 
-const todos = (state = [], action) => {
+const todosOld = (state = [], action) => {
     switch (action.type) {
         case 'ADD_TODO':
             return [
