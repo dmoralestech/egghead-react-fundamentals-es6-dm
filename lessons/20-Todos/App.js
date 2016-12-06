@@ -125,6 +125,41 @@ const todoApp = (state = {}, action) => {
     };
 };
 
+const {createStore} = Redux;
+const store = createStore(todoApp);
+
+console.log(store.getState());
+
+store.dispatch({
+    type: 'ADD_TODO',
+    id: 0,
+    text: 'Learn Redux'
+});
+
+console.log(store.getState());
+
+store.dispatch({
+    type: 'ADD_TODO',
+    id: 1,
+    text: 'Go Shopping'
+});
+
+console.log(store.getState());
+
+store.dispatch({
+    type: 'TOGGLE_TODO',
+    id: 0
+});
+
+console.log(store.getState());
+
+store.dispatch({
+    type: 'SET_VISIBILITY_FILTER',
+    filter: 'SHOW_COMPLETED'
+});
+
+console.log(store.getState());
+
 
 testAddTodo();
 console.log('All tests passed')
