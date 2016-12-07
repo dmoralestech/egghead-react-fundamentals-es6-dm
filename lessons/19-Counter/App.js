@@ -25,7 +25,8 @@ const createStore1 = (reducer) => {
         console.log("state: " + getState());
         listeners.forEach(listener => {
             //console.log("calling: " + listener);
-            listener();});
+            listener();
+        });
     };
 
     const subscribe = (listener) => {
@@ -38,16 +39,13 @@ const createStore1 = (reducer) => {
 
     dispatch({}); // dummy dispatch
 
-    return { getState, dispatch, subscribe };
+    return {getState, dispatch, subscribe};
 
 };
-const store = createStore(counter)
 
-const Counter = ({
-    value,
-    onIncrement,
-    onDecrement
-}) => (
+const store = createStore(counter);
+
+const Counter = ({value, onIncrement, onDecrement}) => (
     <div>
         <h1>{value}</h1>
         <button onClick={onIncrement}>+</button>
