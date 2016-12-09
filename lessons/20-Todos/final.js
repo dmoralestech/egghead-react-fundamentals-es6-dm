@@ -2,6 +2,7 @@
  * Created by darwinmorales on 8/12/2016.
  */
 import React from 'react';
+import Redux from 'redux';
 
 const todo = (state, action) => {
     switch (action.type) {
@@ -78,6 +79,7 @@ const toggleTodo = (id) => {
 
 const { Component } = React;
 const { connect } = ReactRedux;
+
 const Link = ({
     active,
     children,
@@ -199,6 +201,7 @@ let AddTodo = ({ dispatch }) => {
         </div>
     );
 };
+
 AddTodo = connect()(AddTodo);
 
 const getVisibleTodos = (todos, filter) => {
