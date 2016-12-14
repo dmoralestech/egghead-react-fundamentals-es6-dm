@@ -43,6 +43,8 @@ const searchColor = findColor('green')
                         .fold(e => 'no color',
                             c => c.toUpperCase())
 
+const fromNullable = x =>  x != null  ? Right(x) : Left(null)
+
 const Either = Right || Left
 
 
