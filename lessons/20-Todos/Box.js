@@ -33,6 +33,16 @@ const Left = x => ({
 
 const result = Left(2).map(x => x + 1).map(x => x / 2).fold(x=> 'error', x => x)
 
+const findColor = name => {
+    const found = ({red: '', blue: '', yellow: ''})[name]
+    return found ? Right(found) : Left(null)
+}
+
+const searchColor = findColor('green')
+                        .map(c => c.slice(1))
+                        .fold(e => 'no color',
+                            c => c.toUpperCase())
+
 const Either = Right || Left
 
 
