@@ -4,7 +4,17 @@ const Box = x => ({
     inspect: () => `Box($(x))`
 })
 
-const ManyToFloat = str =>
+const percentToFloat = str =>
+    Box(str.replace(/\$/g, ''))
+        .map(replaced => parseFloat(replaced))
+        .map(number => number * 0.01)
+
+const moneyToFloat = str =>
     Box(str)
     .map( s => s.replace(/\$/g, ''))
-    .fold(r => parseFloat(r))
+    .map(r => parseFloat(r))
+
+const applyDiscount = (price, discount) =>
+    moneyToFloat(price)
+        .map(cost => percentToFloat(discount)
+                        .map(savings => cost - cost * savings))
