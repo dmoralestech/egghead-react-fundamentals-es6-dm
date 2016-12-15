@@ -33,8 +33,10 @@ const Left = x => ({
 
 const result = Left(2).map(x => x + 1).map(x => x / 2).fold(x=> 'error', x => x)
 
+const fromNullable = x =>  x != null  ? Right(x) : Left(null)
+
 const findColor = name =>
-    fromNullable ({red: '', blue: '', yellow: ''}[name])
+    fromNullable ({red: 'FFAABB', blue: 'AABBCC', yellow: 'BBCCDD'}[name])
 
 
 const searchColor = findColor('green')
@@ -42,7 +44,7 @@ const searchColor = findColor('green')
                         .fold(e => 'no color',
                             c => c.toUpperCase())
 
-const fromNullable = x =>  x != null  ? Right(x) : Left(null)
+
 
 const Either = Right || Left
 
